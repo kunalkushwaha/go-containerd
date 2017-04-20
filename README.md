@@ -57,21 +57,22 @@ $ sudo ../bin/goctr
 ```
 
 __Status__: Work In Progress.
-- [ ]execution
- - [ ]Run ?
- - [x]Create
- - [x]Start
- - [x]Delete
- - [ ]Info
- - [ ]List
- - [ ]Kill
- - [ ]Events
- - [ ]Exec
- - [ ]Pty
- - [ ]CloseStdin
-- [ ]images
-- [ ]content
-- [ ]shim
-- [ ]rootfs
+
+- [ ] execution
+   - [ ] Run ?
+   - [x] Create
+   - [x] Start
+   - [x] Delete
+   - [ ] Info
+   - [ ] List
+   - [ ] Kill
+   - [ ] Events
+   - [ ] Exec
+   - [ ] Pty
+   - [ ] CloseStdin
+- [ ] images
+- [ ] content
+- [ ] shim
+- [ ] rootfs
 
 - _PRs & Issues are most welcome._
