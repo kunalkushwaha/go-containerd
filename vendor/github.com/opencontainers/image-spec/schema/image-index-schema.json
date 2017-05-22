@@ -1,0 +1,35 @@
+{
+  "description": "OpenContainer Image Index Specification",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://opencontainers.org/schema/image/index",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "description": "This field specifies the image index schema version as an integer",
+      "id": "https://opencontainers.org/schema/image/index/schemaVersion",
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 2
+    },
+    "manifests": {
+      "type": "array",
+      "items": {
+        "$ref": "defs-image.json#/definitions/manifestDescriptor"
+      }
+    },
+    "elements": {
+      "type": "array",
+      "items": {
+        "$ref": "content-descriptor.json"
+      }
+    },
+    "annotations": {
+      "id": "https://opencontainers.org/schema/image/index/annotations",
+      "$ref": "defs-image.json#/definitions/annotations"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "manifests"
+  ]
+}

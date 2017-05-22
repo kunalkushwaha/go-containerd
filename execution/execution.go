@@ -4,9 +4,9 @@ import (
 	gocontext "context"
 	"fmt"
 
+	"github.com/containerd/console"
 	"github.com/containerd/containerd/api/services/execution"
 	"github.com/containerd/containerd/api/types/mount"
-	"github.com/crosbymichael/console"
 	protobuf "github.com/gogo/protobuf/types"
 	"github.com/kunalkushwaha/go-containerd/pkg"
 	"github.com/opencontainers/runtime-spec/specs-go"

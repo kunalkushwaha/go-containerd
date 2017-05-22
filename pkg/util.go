@@ -11,7 +11,7 @@ import (
 
 	gocontext "context"
 
-	"github.com/tonistiigi/fifo"
+	"github.com/containerd/fifo"
 	"google.golang.org/grpc"
 )
 
@@ -93,4 +93,16 @@ func PrepareStdio(stdin, stdout, stderr string, console bool) (*sync.WaitGroup, 
 	}
 
 	return &wg, nil
+}
+
+//ConnectGRPC connects to GRPC socket.
+func ConnectGRPC(address string, timeout time.Duration) (*grpc.ClientConn, error) {
+	return grpc.Dial(address,
+		grpc.WithTimeout(timeout),
+		grpc.WithBlock(),
+		grpc.WithInsecure(),
+		grpc.WithDialer(func(addr string, timeout time.Duration) (net.Conn, error) {
+			return net.DialTimeout("unix", address, timeout)
+		}),
+	)
 }
